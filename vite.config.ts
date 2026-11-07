@@ -4,6 +4,8 @@ import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig(() => ({
+  // Served from a sub-folder on GitHub Pages (BASE_PATH=/<repo>/); "/" everywhere else.
+  base: process.env.BASE_PATH || "/",
   server: {
     host: "::",
     port: 8080,

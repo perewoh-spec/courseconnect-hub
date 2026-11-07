@@ -45,7 +45,7 @@ export default function Auth() {
     try {
       if (forgot) {
         const { error } = await supabase.auth.resetPasswordForEmail(email, {
-          redirectTo: `${window.location.origin}/reset-password`,
+          redirectTo: `${window.location.origin}${import.meta.env.BASE_URL}reset-password`,
         });
         if (error) toast({ title: "Couldn't send reset email", description: error.message, variant: "destructive" });
         else {
